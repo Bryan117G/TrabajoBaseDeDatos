@@ -1,0 +1,32 @@
+create database trabajo;
+
+
+create table localizaciones(
+    id int AUTO_INCREMENT UNIQUE,
+    localizacion varchar(100),
+    activo BOOLEAN 
+);
+
+create table cargos(
+    id int AUTO_INCREMENT UNIQUE,
+    cargo varchar(100),
+    activo BOOLEAN 
+);
+
+create table cargos(
+    id int AUTO_INCREMENT UNIQUE,
+    nombres varchar(20),
+    apellidos varchar(20),
+    identificion varchar(100),
+    localizacion_id int(20),
+    cargo_id int(20),
+    activo BOOLEAN,
+    FOREIGN KEY (localizacion_id) REFERENCES localizaciones(id),
+    FOREIGN KEY (cargo_id) REFERENCES cargos(id)
+);
+
+create table Login(
+    id int AUTO_INCREMENT UNIQUE,
+    nombre varchar(20),
+    correo varchar(20)
+);
